@@ -1,0 +1,15 @@
+{
+  "name": "panteon-leaderboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@stitches/react": "^1.2.8",
+    "next-themes": "^0.2.1"
+  }
+}
