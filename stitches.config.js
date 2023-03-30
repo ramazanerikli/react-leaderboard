@@ -10,7 +10,7 @@ export const {
     /* ... other tokens */
     colors: {
       text: "white",
-      background: "black",
+      background: "#18151f",
     }
   }
  });
@@ -29,7 +29,7 @@ const GlobalStyles = globalCss({
     //$ prefix in a string
     background: "$background", 
     color: "$text"
-  }
+  },
 })
 
 GlobalStyles();

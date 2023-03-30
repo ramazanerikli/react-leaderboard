@@ -8,6 +8,7 @@ import iconPath from "@/fixtures/iconPath";
 export type IconType = 
 | "sun"
 | "moon"
+| "drag"
 
 const Icon: FC<{
   name: IconType;
@@ -37,6 +38,14 @@ const Icon: FC<{
       );
       break;
     }
+    case "drag": {
+      iconContent = (
+        <>
+           <path d={iconPath["drag"]}></path>
+        </>
+      );
+      break;
+    }
   }
 
   return (
@@ -44,9 +53,9 @@ const Icon: FC<{
       stroke="currentColor" 
       fill="currentColor" 
       stroke-width="0" 
-      viewBox="0 0 16 16" 
-      height="1em" 
-      width="1em" 
+      width={size ? size : "16px"}
+      height={size ? size : "16px"}
+      viewBox={viewBox || "0 0 16 16"}
       xmlns="http://www.w3.org/2000/svg"
     >
       {iconContent}

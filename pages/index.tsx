@@ -30,10 +30,10 @@ const Title = styled('title', {
 const Content = styled('content', {
   display: 'flex',
   backgroundColor: '#2c1159',
-  height: '200px',
+  height: '290px',
   width: '100%',
-  borderBottomLeftRadius: '200px',
-  borderBottomRightRadius: '200px',
+  borderRadius: '51% 49% 49% 51% / 0% 0% 100% 100%',
+  /* clipPath: 'polygon(0 0, 100% 0, 100% 20%, 94% 67%, 77% 100%, 20% 100%, 3% 66%, 0% 20%);', */
 });
 
 const SearchBar = styled('searchBar', {
@@ -49,9 +49,11 @@ const Input = styled("input", {
   width: '100%',
   height: '40px',
   backgroundColor: '#251e40',
-  borderColor: '#331d67',
-  borderRadius: '10px',
+  borderRadius: '7px',
   color: 'white',
+  borderStyle: 'solid',
+  borderColor: '#4c037a',
+  borderWidth: '1px',
   outline: 0,
 
   "&::placeholder": {
@@ -67,8 +69,8 @@ const Input = styled("input", {
         paddingLeft: "10px",
       },
       lg: {
-        fontSize: "15px",
-        height: "35px",
+        fontSize: "16px",
+        height: "40px",
         paddingLeft: "15px",
         paddingRight: "15px",
       },
@@ -84,7 +86,7 @@ const Input = styled("input", {
 const Icon = styled("icon", {
   position: 'absolute',
   left: '10px',
-  top: '10px',
+  top: '12px',
   variants: {
     color: {
       white: {
@@ -97,8 +99,6 @@ const Icon = styled("icon", {
 
 
 export default function Home() {
-
-
 
 
   return (
@@ -127,7 +127,7 @@ export default function Home() {
           <Icon color="white">
             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path></svg>
           </Icon>
-          <Input type="text" placeholder='Search...' placement="iconed"></Input>
+          <Input type="text" placeholder='Search' size="lg" placement="iconed"></Input>
         </SearchBar>
         <Board />
       </Container>
