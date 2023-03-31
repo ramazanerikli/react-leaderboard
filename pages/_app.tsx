@@ -16,13 +16,13 @@ export default function App({ Component, pageProps }: AppProps) {
     return; 
   }
 
-  return     <ThemeProvider
-      attribute="class"
-      defaultTheme="darkTheme"
-      value={{
-        dark: "dark",
-        light: lightTheme.className
-      }}
+  return <ThemeProvider
+            attribute="class"
+            defaultTheme="darkTheme"
+            value={{
+              dark: "dark",
+              light: lightTheme.className
+            }}
     >
       <Component {...pageProps} />
     </ThemeProvider>

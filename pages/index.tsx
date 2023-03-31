@@ -7,11 +7,9 @@ const inter = Inter({ subsets: ['latin'] })
 import Nav from "../components/Nav";
 import Board from "../components/Board";
 import { Container } from '@/components/Container';
+import Icon from "../components/Icon";
 
 import { styled } from '@stitches/react';
-
-
-
 
 
 const Title = styled('title', {
@@ -30,7 +28,6 @@ const Content = styled('div', {
   height: '290px',
   width: '100%',
   borderRadius: '51% 49% 49% 51% / 0% 0% 100% 100%',
-  /* clipPath: 'polygon(0 0, 100% 0, 100% 20%, 94% 67%, 77% 100%, 20% 100%, 3% 66%, 0% 20%);', */
 });
 
 const SearchBar = styled('div', {
@@ -68,21 +65,16 @@ const Input = styled("input", {
       lg: {
         fontSize: "16px",
         height: "50px",
-        paddingLeft: "15px",
+        paddingLeft: "45px",
         paddingRight: "15px",
       },
     },
-    placement: {
-      iconed: {
-        paddingLeft: "35px"
-      }
-    }
   },
 });
 
-const Icon = styled("div", {
+const InputIcon = styled("div", {
   position: 'absolute',
-  left: '10px',
+  left: '20px',
   top: '16px',
   variants: {
     color: {
@@ -94,10 +86,56 @@ const Icon = styled("div", {
 });
 
 
+const FlexItem = styled("div", {
+  backgroundColor: '#251e40',
+  borderRadius: '7px',
+  borderStyle: 'solid',
+  borderColor: 'rgb(61 45 126)',
+  borderWidth: '1px',
+  height: '50px',
+  paddingLeft: '15px',
+  paddingRight: '15px',
+  variants: {
+    cursor: {
+      pointer: {
+        cursor: 'pointer'
+      }
+    },
+    display: {
+      flex: {
+        display: 'flex',
+      },
+    },
+    items: {
+      center: {
+        alignItems: 'center',
+      }
+    }
+  },
+});
+
+
+const Row = styled("div", {
+  display: 'flex',
+  alignItems: 'center',
+  variants: {
+    direction: {
+      column: {
+        flexDirection: 'column',
+      },
+      row: {
+        flexDirection: 'row'
+      },
+    },
+    gap: {
+      sm: {
+        gap: '10px'
+      }
+    }
+  },
+});
 
 export default function Home() {
-
-
   return (
     <>
       <Head>
@@ -107,31 +145,33 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-
       <Nav />
-
-
 
       <Content>
       <Title>
         Leaderboard
-        
       </Title>
       </Content>
 
       <Container>
-        <SearchBar>
-          <Icon color="white">
-            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path></svg>
-          </Icon>
-          <Input type="text" placeholder='Search' size="lg" placement="iconed"></Input>
-        </SearchBar>
+
+          <Row direction="row" gap="sm">
+            <SearchBar>
+              <InputIcon><Icon name="search" /></InputIcon>
+              <Input type="text" placeholder='Search' size="lg"></Input>
+            </SearchBar>
+            <FlexItem display="flex" items="center" cursor="pointer">
+              <Icon name="layers" viewBox='0 0 512 512' size={"24"}  />
+            </FlexItem>
+          </Row>
+
+
+
+
+
+
         <Board />
       </Container>
-
-
-
-
     </>
   )
 }

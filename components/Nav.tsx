@@ -15,7 +15,7 @@ const NavBar = styled('nav', {
   alignItems: 'center',
   justifyContent: 'center',
   width: '100%',
-  height: '60px',
+  height: '80px',
   backgroundColor: '#18151f',
   padding: '10px 15px',
 });
@@ -68,12 +68,12 @@ const Nav: FC<{}> = ({}) => {
           <Image src={Logo} width={180} height={30} alt="Panteon Games" />
         </Block>
         <Button onClick={toggleTheme} size={"sm"}>
-        {theme === "dark" ? (
-            <Icon name="sun" />
-        ) : 
-        (
-            <Icon name="moon" />
-        ) }
+          {theme === "dark" ? (
+              <Icon name="sun" />
+          ) : 
+          (
+              <Icon name="moon" />
+          ) }
         </Button>
       </Container>
   </NavBar>

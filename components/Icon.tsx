@@ -1,14 +1,12 @@
 import { FC } from "react";
-import { useState } from 'react';
-import { styled } from '@stitches/react';
 import iconPath from "@/fixtures/iconPath";
-
-
 
 export type IconType = 
 | "sun"
 | "moon"
 | "drag"
+| "search"
+| "layers"
 
 const Icon: FC<{
   name: IconType;
@@ -46,13 +44,29 @@ const Icon: FC<{
       );
       break;
     }
+    case "search": {
+      iconContent = (
+        <>
+           <path d={iconPath["search"]}></path>
+        </>
+      );
+      break;
+    }
+    case "layers": {
+      iconContent = (
+        <>
+           <path d={iconPath["layers"]}></path>
+        </>
+      );
+      break;
+    }
   }
 
   return (
     <svg
       stroke="currentColor" 
       fill="currentColor" 
-      stroke-width="0" 
+      strokeWidth="0" 
       width={size ? size : "16px"}
       height={size ? size : "16px"}
       viewBox={viewBox || "0 0 16 16"}
