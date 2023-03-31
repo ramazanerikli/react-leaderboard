@@ -3,8 +3,11 @@ import { useState } from 'react';
 import { styled } from '@stitches/react';
 import players from "../players";
 import { Player } from "../types/Player";
+import React from 'react';
 
 import Icon from "../components/Icon";
+
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 const Table = styled('table', {
   width: '100%',
@@ -36,6 +39,15 @@ const PlayerRow = styled('tr', {
   backgroundColor: '#251e40',
   marginTop: '10px',
   height: '50px',
+  transform: 'skew(-25deg)',
+  borderRadius: '5px',
+  borderColor: 'rgb(61 45 126)',
+  borderStyle: 'solid',
+  borderWidth: '1px',  
+});
+
+const PlayerRowChild = styled('td', {
+  transform: 'skew(25deg)',
 });
 
 const HeaderData = [
@@ -54,40 +66,55 @@ const HeaderData = [
 ]
 
 
+const TableRow = styled('tr', {
+
+});
+
+const TableHeaderCell = styled('th', {
+
+});
+
+
+
+
+
+
 const Board: FC<{}> = ({}) => {
   const [playersList, setPlayersList] = useState(players)
 
   return (
-    <Table>
+<>
+<Table>
       <thead>
-        <tr>
+        <TableRow>
           {HeaderData.map((item, index) => (
-            <th key={index}>
+            <TableHeaderCell key={index}>
               {item.name}
               <Grabbable><Icon name="drag" size="32" viewBox="0 0 24 24" /></Grabbable>
-            </th>
+            </TableHeaderCell>
           ))}
-        </tr>
+        </TableRow>
       </thead>
       <tbody>
         {playersList.map((player: Player, index: number) => (
           <PlayerRow key={index}>
-            <td>
+            <PlayerRowChild>
               1
-            </td>
-            <td>
+            </PlayerRowChild>
+            <PlayerRowChild>
               {player.name}
-            </td>
-            <td>
+            </PlayerRowChild>
+            <PlayerRowChild>
               {player.country}
-            </td>
-            <td>
+            </PlayerRowChild>
+            <PlayerRowChild>
               {player.money}
-            </td>
+            </PlayerRowChild>
           </PlayerRow>
         ))}
       </tbody>
     </Table>
+</>
   );
 };
 

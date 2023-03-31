@@ -11,9 +11,6 @@ import { Container } from '@/components/Container';
 import { styled } from '@stitches/react';
 
 
-import { useState } from 'react';
-
-import { useTheme } from "next-themes";
 
 
 
@@ -27,7 +24,7 @@ const Title = styled('title', {
   paddingBottom: '70px',
 });
 
-const Content = styled('content', {
+const Content = styled('div', {
   display: 'flex',
   backgroundColor: '#2c1159',
   height: '290px',
@@ -36,7 +33,7 @@ const Content = styled('content', {
   /* clipPath: 'polygon(0 0, 100% 0, 100% 20%, 94% 67%, 77% 100%, 20% 100%, 3% 66%, 0% 20%);', */
 });
 
-const SearchBar = styled('searchBar', {
+const SearchBar = styled('div', {
   display: 'flex',
   width: '100%',
   position: 'relative',
@@ -52,7 +49,7 @@ const Input = styled("input", {
   borderRadius: '7px',
   color: 'white',
   borderStyle: 'solid',
-  borderColor: '#4c037a',
+  borderColor: 'rgb(61 45 126)',
   borderWidth: '1px',
   outline: 0,
 
@@ -70,7 +67,7 @@ const Input = styled("input", {
       },
       lg: {
         fontSize: "16px",
-        height: "40px",
+        height: "50px",
         paddingLeft: "15px",
         paddingRight: "15px",
       },
@@ -83,10 +80,10 @@ const Input = styled("input", {
   },
 });
 
-const Icon = styled("icon", {
+const Icon = styled("div", {
   position: 'absolute',
   left: '10px',
-  top: '12px',
+  top: '16px',
   variants: {
     color: {
       white: {
@@ -123,7 +120,7 @@ export default function Home() {
       </Content>
 
       <Container>
-        <SearchBar placement="iconed">
+        <SearchBar>
           <Icon color="white">
             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path></svg>
           </Icon>

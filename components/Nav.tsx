@@ -10,7 +10,7 @@ import { Container } from "../components/Container";
 import Icon from "../components/Icon";
 
 
-const NavBar = styled('navbar', {
+const NavBar = styled('nav', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
