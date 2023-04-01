@@ -11,6 +11,9 @@ import Icon from "../components/Icon";
 
 
 const NavBar = styled('nav', {
+  position: 'fixed',
+  top: '0',
+  zIndex: '10',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',

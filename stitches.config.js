@@ -19,7 +19,7 @@ export const {
 export const lightTheme = createTheme({ 
   colors: { 
     text: "black",
-    background: "white"
+    background: "white",
   } 
 });
 
@@ -27,7 +27,7 @@ const GlobalStyles = globalCss({
   body: {
     //we can call the color token values with the
     //$ prefix in a string
-    background: "$background", 
+    background: "$background",
     color: "$text"
   },
 })
