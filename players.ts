@@ -1,45 +1,52 @@
 const players = [
   {
     playerId: 0,
+    rank: 1,
+    playerName: "John Doe",
+    country: "Czech",
     money: 500,
-    name: "John Doe",
-    country: "Czech"
   },
   {
     playerId: 1,
+    rank: 2,
+    playerName: "Magda",
+    country: "Poland",
     money: 750,
-    name: "Magda",
-    country: "Poland"
   },
   {
     playerId: 2,
+    rank: 3,
+    playerName: "Micha",
+    country: "Ukraine",
     money: 1000,
-    name: "Micha",
-    country: "Ukraine"
   },
   {
     playerId: 3,
+    rank: 4,
+    playerName: "Professor",
+    country: "Spain",
     money: 10,
-    name: "Professor",
-    country: "Spain"
   },
   {
     playerId: 4,
+    rank: 5,
+    playerName: "Leulseged",
+    country: "Rwanda",
     money: 40,
-    name: "Leulseged",
-    country: "Rwanda"
   },
   {
     playerId: 5,
+    rank: 6,
+    playerName: "Merv",
+    country: "Germany",
     money: 2000,
-    name: "Merv",
-    country: "Germany"
   },
   {
     playerId: 6,
+    rank: 7,
+    playerName: "Selin",
+    country: "Mexico",
     money: 4000,
-    name: "Selin",
-    country: "Mexico"
   },
 ]
 

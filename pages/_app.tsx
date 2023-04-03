@@ -3,6 +3,8 @@ import type { AppProps } from 'next/app'
 import { ThemeProvider } from "next-themes";
 import { lightTheme } from "../stitches.config";
 import { useEffect, useState } from 'react';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend'
 
 export default function App({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useState<any>(null);
@@ -16,7 +18,8 @@ export default function App({ Component, pageProps }: AppProps) {
     return; 
   }
 
-  return <ThemeProvider
+  return <DndProvider backend={HTML5Backend}>
+    <ThemeProvider
             attribute="class"
             defaultTheme="darkTheme"
             value={{
@@ -26,4 +29,5 @@ export default function App({ Component, pageProps }: AppProps) {
     >
       <Component {...pageProps} />
     </ThemeProvider>
+  </DndProvider>
 }

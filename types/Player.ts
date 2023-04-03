@@ -1,6 +1,7 @@
 export interface Player {
   playerId: number,
-  name: string,
+  playerName: string,
   country: string,
-  money: number
+  money: number,
+  rank?: number,
 }
