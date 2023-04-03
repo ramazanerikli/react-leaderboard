@@ -102,71 +102,12 @@ const Board: FC<{}> = ({}) => {
   }
 
 
-    /* New way 
-  const data = React.useMemo(
-    () => [
-      {
-        col1: '1',
-        col2: 'John Doe',
-        col3: 'Czech',
-        col4: '500',
-      },
-      {
-        col1: '2',
-        col2: 'Magda',
-        col3: 'Poland',
-        col4: '750',
-      },
-      {
-        col1: '3',
-        col2: 'Micha',
-        col3: 'Ukraine',
-        col4: '1000',
-      },
-      {
-        col1: '4',
-        col2: 'Professor',
-        col3: 'Spain',
-        col4: '10',
-      },
-    ],
-    []
-  )
 
-  const columns = React.useMemo(
-    () => [
-      {
-        Header: 'Ranking',
-        accessor: 'col1', // accessor is the "key" in the data
-      },
-      {
-        Header: 'Player Name',
-        accessor: 'col2',
-      },
-      {
-        Header: 'Country',
-        accessor: 'col3',
-      },
-      {
-        Header: 'Money',
-        accessor: 'col4',
-      },
-    ],
-    []
-  )
 
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({ columns, data })
 
-  
- */
 
-  
+ 
+
 
 
 
@@ -175,53 +116,8 @@ const Board: FC<{}> = ({}) => {
   return (
     <>
 
-{/* 
-<table {...getTableProps()} style={{ border: 'solid 1px blue', marginBottom: '20px' }}>
-       <thead>
-         {headerGroups.map(headerGroup => (
-           <tr {...headerGroup.getHeaderGroupProps()}>
-             {headerGroup.headers.map(column => (
-               <th
-                 {...column.getHeaderProps()}
-                 style={{
-                   borderBottom: 'solid 3px red',
-                   background: 'aliceblue',
-                   color: 'black',
-                   fontWeight: 'bold',
-                 }}
-               >
-                 {column.render('Header')}
-               </th>
-             ))}
-           </tr>
-         ))}
-       </thead>
-       <tbody {...getTableBodyProps()}>
-         {rows.map(row => {
-           prepareRow(row)
-           return (
-             <tr {...row.getRowProps()}>
-               {row.cells.map(cell => {
-                 return (
-                   <td
-                     {...cell.getCellProps()}
-                     style={{
-                       padding: '10px',
-                       border: 'solid 1px gray',
-                       background: 'lightblue',
-                     }}
-                   >
-                     {cell.render('Cell')}
-                   </td>
-                 )
-               })}
-             </tr>
-           )
-         })}
-       </tbody>
-     </table>
-        */}
- 
+
+
 
 
 
