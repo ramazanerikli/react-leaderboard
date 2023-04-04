@@ -4,4 +4,5 @@ export interface Player {
   country: string,
   money: number,
   rank?: number,
+  iso?: string
 }

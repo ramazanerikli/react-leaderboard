@@ -7,11 +7,11 @@ import React from 'react';
 
 import Icon from "../components/Icon";
 
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import { useTable, useAbsoluteLayout, useColumnOrder } from "react-table";
 
-import { DndProvider, useDrag, useDrop } from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend'
+import { useDrag, useDrop } from 'react-dnd'
+
+import ReactCountryFlag from "react-country-flag"
+
 
 
 import {
@@ -26,43 +26,19 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 
-type Person = {
-  ranking: number
-  playerName: string
-  country: string
-  money: number
-}
-
-const defaultData: Person[] = [
-  {
-    ranking: 1,
-    playerName: 'linsley',
-    country: 'spain',
-    money: 100,
-  },
-  {
-    ranking: 2,
-    playerName: 'professor',
-    country: 'mexico',
-    money: 250,
-  },
-  {
-    ranking: 3,
-    playerName: 'monika',
-    country: 'czech',
-    money: 220,
-  },
-  {
-    ranking: 4,
-    playerName: 'micha',
-    country: 'ukraine',
-    money: 1000,
-  },
-]
 
 
 
-const defaultColumns: ColumnDef<Person>[] = [
+    // Country Code
+    const lookup = require('country-code-lookup')
+    const country = lookup.byCountry('Turkey').iso2;
+
+
+
+
+
+
+const defaultColumns: ColumnDef<Player>[] = [
   {
     accessorKey: 'rank',
     id: 'rank',
@@ -78,15 +54,22 @@ const defaultColumns: ColumnDef<Person>[] = [
   {
     accessorKey: 'country',
     id: 'country',
-    header: 'Country',
+    cell: info => info.getValue(),
+    header: () => 'Country',
   },
 
   {
     accessorKey: 'money',
     id: 'money',
-    header: 'Money',
+    cell: info => info.getValue(),
+    header: () => 'Money',
   },
 ]
+
+
+
+
+
 
 const reorderColumn = (
   draggedColumnId: string,
@@ -102,8 +85,8 @@ const reorderColumn = (
 }
 
 const DraggableColumnHeader: FC<{
-  header: Header<Person, unknown>
-  table: Table<Person>
+  header: Header<Player, unknown>
+  table: Table<Player>
 }> = ({ header, table }) => {
   const { getState, setColumnOrder } = table
   const { columnOrder } = getState()
@@ -111,7 +94,7 @@ const DraggableColumnHeader: FC<{
 
   const [, dropRef] = useDrop({
     accept: 'column',
-    drop: (draggedColumn: Column<Person>) => {
+    drop: (draggedColumn: Column<Player>) => {
       const newColumnOrder = reorderColumn(
         draggedColumn.id,
         column.id,
@@ -145,11 +128,11 @@ const DraggableColumnHeader: FC<{
   )
 }
 
+const columnHelper = createColumnHelper<Player>()
 
-const columnHelper = createColumnHelper<Person>()
 
 const columns = [
-  columnHelper.accessor('ranking', {
+  columnHelper.accessor('rank', {
     cell: info => info.getValue(),
   }),
   columnHelper.accessor(row => row.playerName, {
@@ -165,8 +148,6 @@ const columns = [
     header: () => <span>Money</span>,
   }),
 ]
-
-
 
 
 const Table = styled('table', {
@@ -240,26 +221,6 @@ const TableHeaderCell = styled('th', {
 const Board: FC<{}> = ({}) => {
   const [playersList, setPlayersList] = useState(players)
 
-  const [headerDataa, updateHeaderDataa] = useState(HeaderData);
-
-
-
-  
-
-  
-  function onDragEnd(result: any, index: any) {
-
-    if(!result.destination) return;
-
-
-    const items = Array.from(headerDataa);
-    const [reorderedItem] = items.splice(result.source.index, 1);
-    items.splice(result.destination.index, 0, reorderedItem);
-    updateHeaderDataa(items)
-
-  }
-
-
 
   const [data, setData] = useState(players)
 
@@ -269,14 +230,8 @@ const Board: FC<{}> = ({}) => {
     columns.map(column => column.id as string) //must start out with populated columnOrder so we can splice
   )
 
-
-
-
-
   const resetOrder = () =>
     setColumnOrder(columns.map(column => column.id as string))
-
-
 
     const table = useReactTable({
       data,
@@ -290,17 +245,17 @@ const Board: FC<{}> = ({}) => {
       debugHeaders: true,
       debugColumns: true,
     })
-  
 
 
+    const getCountryCodeFromName = (name: any) => {
+      return (
+        lookup.byCountry(name)?.iso2
+      )
+    }
 
-
-
-
+    
   return (
     <>
-
-
 
 <Table>
         <thead>
@@ -320,9 +275,39 @@ const Board: FC<{}> = ({}) => {
           {table.getRowModel().rows.map(row => (
             <PlayerRow key={row.id}>
               {row.getVisibleCells().map(cell => (
-                <PlayerRowChild key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </PlayerRowChild>
+                <div key={cell.id}>
+                    {cell.id.indexOf('country') > -1 ? (
+                    <>
+                    <ReactCountryFlag
+                      countryCode={getCountryCodeFromName(cell.getValue())}
+                      svg
+                      style={{
+                          width: '2em',
+                          height: '2em',
+                          marginRight: '10px' 
+                      }}
+                      title="US"
+                    />
+                      {cell.getValue()}
+                    </>
+
+
+                    ) : 
+                    (
+                      <>
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      </>
+                    )
+                    }
+
+                    
+
+
+                  
+                  
+                  
+                  
+                </div>
               ))}
             </PlayerRow>
           ))}

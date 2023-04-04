@@ -3,8 +3,9 @@ const players = [
     playerId: 0,
     rank: 1,
     playerName: "John Doe",
-    country: "Czech",
+    country: "Turkey",
     money: 500,
+    iso:'fr'
   },
   {
     playerId: 1,
@@ -12,6 +13,7 @@ const players = [
     playerName: "Magda",
     country: "Poland",
     money: 750,
+    iso: 'fr'
   },
   {
     playerId: 2,
@@ -19,6 +21,7 @@ const players = [
     playerName: "Micha",
     country: "Ukraine",
     money: 1000,
+    iso: 'fr'
   },
   {
     playerId: 3,
@@ -26,6 +29,7 @@ const players = [
     playerName: "Professor",
     country: "Spain",
     money: 10,
+    iso: 'fr'
   },
   {
     playerId: 4,
@@ -33,6 +37,7 @@ const players = [
     playerName: "Leulseged",
     country: "Rwanda",
     money: 40,
+    iso: 'fr'
   },
   {
     playerId: 5,
@@ -40,6 +45,7 @@ const players = [
     playerName: "Merv",
     country: "Germany",
     money: 2000,
+    iso: 'fr'
   },
   {
     playerId: 6,
@@ -47,6 +53,31 @@ const players = [
     playerName: "Selin",
     country: "Mexico",
     money: 4000,
+    iso: 'fr'
+  },
+  {
+    playerId: 7,
+    rank: 8,
+    playerName: "John",
+    country: "Greece",
+    money: 4000,
+    iso: 'fr'
+  },
+  {
+    playerId: 7,
+    rank: 9,
+    playerName: "John",
+    country: "Finland",
+    money: 4000,
+    iso: 'fr'
+  },
+  {
+    playerId: 8,
+    rank: 10,
+    playerName: "John",
+    country: "Sweden",
+    money: 4000,
+    iso: 'fr'
   },
 ]
 
