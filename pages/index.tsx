@@ -8,9 +8,11 @@ import Nav from "../components/Nav";
 import Board from "../components/Board";
 import { Container } from '@/components/Container';
 import Icon from "../components/Icon";
+import Search from '../components/Search';
 
 import { styled } from '@stitches/react';
 
+import players from '@/players';
 
 const Title = styled('title', {
   display: 'block',
@@ -47,63 +49,6 @@ const Effect = styled('div', {
   top: '80px',
   background: 'repeating-linear-gradient(to right, transparent, transparent 20px, black 20px,black 21px)',
 });
-
-
-const SearchBar = styled('div', {
-  display: 'flex',
-  width: '100%',
-  position: 'relative',
-  marginTop: '10px'
-});
-
-const Input = styled("input", {
-  display: "block",
-  marginBottom: "10px",
-  width: '100%',
-  height: '40px',
-  backgroundColor: '#251e40',
-  borderRadius: '7px',
-  color: 'white',
-  borderStyle: 'solid',
-  borderColor: 'rgb(61 45 126)',
-  borderWidth: '1px',
-  outline: 0,
-
-  "&::placeholder": {
-    color: 'white',
-  },
-
-  variants: {
-    size: {
-      sm: {
-        fontSize: "13px",
-        height: "25px",
-        paddingRight: "10px",
-        paddingLeft: "10px",
-      },
-      lg: {
-        fontSize: "16px",
-        height: "50px",
-        paddingLeft: "45px",
-        paddingRight: "15px",
-      },
-    },
-  },
-});
-
-const InputIcon = styled("div", {
-  position: 'absolute',
-  left: '20px',
-  top: '16px',
-  variants: {
-    color: {
-      white: {
-        color: '#fff',
-      },
-    },
-  },
-});
-
 
 const FlexItem = styled("div", {
   backgroundColor: '#251e40',
@@ -323,10 +268,7 @@ export default function Home() {
       <Container>
 
           <Row direction="row" gap="sm">
-            <SearchBar>
-              <InputIcon><Icon name="search" /></InputIcon>
-              <Input type="text" placeholder='Search' size="lg"></Input>
-            </SearchBar>
+            <Search data={players} />
             <FlexItem display="flex" items="center" cursor="pointer">
               <Icon name="layers" viewBox='0 0 512 512' size={"24"}  />
             </FlexItem>
