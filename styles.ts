@@ -1,5 +1,6 @@
 import { styled } from '@stitches/react';
 
+/* Search */
 export const SearchBar = styled('div', {
   display: 'flex',
   width: '100%',
@@ -53,4 +54,29 @@ export const InputIcon = styled("div", {
       },
     },
   },
+});
+
+
+export const AutoCompleteContainer = styled("div", {
+  backgroundColor: 'rgb(37, 30, 64)',
+  borderStyle: 'solid',
+  borderWidth: '1px',
+  borderColor: 'rgb(61, 45, 126)',
+  position: 'absolute',
+  minHeight: '60px',
+  width: '100%',
+  top: '60px',
+  height: 'auto',
+  maxHeight: '174px',
+  overflowY: 'scroll',
+  borderRadius: '7px',
+});
+
+export const AutoCompleteItem = styled("div", {
+  padding: '20px',
+  cursor: 'pointer',
+});
+
+export const AutoCompleteItemButton = styled("div", {
+  backgroundColor: 'transparent',
 });

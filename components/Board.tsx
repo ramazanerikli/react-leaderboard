@@ -7,12 +7,9 @@ import React from 'react';
 
 import Icon from "../components/Icon";
 
-
 import { useDrag, useDrop } from 'react-dnd'
 
 import ReactCountryFlag from "react-country-flag"
-
-
 
 import {
   Column, 
@@ -26,17 +23,9 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 
-
-
-
     // Country Code
     const lookup = require('country-code-lookup')
     const country = lookup.byCountry('Turkey').iso2;
-
-
-
-
-
 
 const defaultColumns: ColumnDef<Player>[] = [
   {
@@ -184,6 +173,11 @@ const PlayerRow = styled('tr', {
   borderColor: 'rgb(61 45 126)',
   borderStyle: 'solid',
   borderWidth: '1px',  
+  cursor: 'pointer',
+
+  "&:hover": {
+    backgroundColor: 'rgb(42 31 86)',
+  },
 });
 
 const PlayerRowChild = styled('td', {

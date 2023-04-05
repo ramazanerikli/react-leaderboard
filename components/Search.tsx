@@ -4,42 +4,7 @@ import Icon from "./Icon";
 import players from "../players";
 import { Player } from "../types/Player";
 
-import { SearchBar, Input, InputIcon } from "@/styles";
-
-export const AutoCompleteContainer = styled("div", {
-  backgroundColor: 'rgb(37, 30, 64)',
-  borderStyle: 'solid',
-  borderWidth: '1px',
-  borderColor: 'rgb(61, 45, 126)',
-  position: 'absolute',
-  minHeight: '60px',
-  width: '100%',
-  top: '60px',
-  height: 'auto',
-  maxHeight: '150px',
-  overflowY: 'scroll',
-
-  "&::-webkit-scrollbar": {
-    width: '1em',
-  },
-  "&::-webkit-scrollbar-track": {
-    boxShadow: 'inset 0 0 6px rgba(0, 0, 0, 0.3);',
-  },
-  "&::-webkit-scrollbar-thumb": {
-    backgroundColor: 'darkgrey',
-    outline: '1px solid slategrey'
-  },
-});
-
-export const AutoCompleteItem = styled("div", {
-  padding: '20px',
-  cursor: 'pointer',
-});
-
-export const AutoCompleteItemButton = styled("div", {
-  backgroundColor: 'transparent',
-});
-
+import { SearchBar, Input, InputIcon, AutoCompleteContainer, AutoCompleteItem, AutoCompleteItemButton } from "@/styles";
 
 
 const Search: FC<{
