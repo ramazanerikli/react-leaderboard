@@ -79,6 +79,86 @@ const players = [
     money: 4000,
     iso: 'fr'
   },
+  {
+    playerId: 8,
+    rank: 10,
+    playerName: "John",
+    country: "Sweden",
+    money: 4000,
+    iso: 'fr'
+  },
+  {
+    playerId: 8,
+    rank: 10,
+    playerName: "John",
+    country: "Sweden",
+    money: 4000,
+    iso: 'fr'
+  },
+  {
+    playerId: 8,
+    rank: 10,
+    playerName: "John",
+    country: "Sweden",
+    money: 4000,
+    iso: 'fr'
+  },
+  {
+    playerId: 8,
+    rank: 10,
+    playerName: "John",
+    country: "Sweden",
+    money: 4000,
+    iso: 'fr'
+  },
+  {
+    playerId: 8,
+    rank: 10,
+    playerName: "John",
+    country: "Sweden",
+    money: 4000,
+    iso: 'fr'
+  },
+  {
+    playerId: 8,
+    rank: 10,
+    playerName: "John",
+    country: "Sweden",
+    money: 4000,
+    iso: 'fr'
+  },
+  {
+    playerId: 8,
+    rank: 10,
+    playerName: "John",
+    country: "Sweden",
+    money: 4000,
+    iso: 'fr'
+  },
+  {
+    playerId: 8,
+    rank: 10,
+    playerName: "John",
+    country: "Sweden",
+    money: 4000,
+    iso: 'fr'
+  },
+  {
+    playerId: 8,
+    rank: 10,
+    playerName: "John",
+    country: "Sweden",
+    money: 4000,
+    iso: 'fr'
+  },
+  {
+    playerId: 8,
+    rank: 10,
+    playerName: "John",
+    country: "Sweden",
+    money: 4000,
+    iso: 'fr'
+  },
 ]
 
 export default players;

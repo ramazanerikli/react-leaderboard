@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 import { useState, useRef, useMemo } from 'react';
 import { styled } from '@stitches/react';
 import players from "../players";
@@ -236,10 +236,9 @@ const Board: FC<{}> = ({}) => {
                       {cell.getValue()}
                     </>
 
-
                     ) : cell.id.indexOf('money') > -1 ? (
                       <div style={{ color: 'rgb(61, 45, 126)' }}>
-                       {cell.getValue()}
+                       {cell.getValue() as ReactNode}
                       </div>
                     ) :
                     (
