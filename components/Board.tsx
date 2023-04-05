@@ -11,6 +11,8 @@ import { useDrag, useDrop } from 'react-dnd'
 
 import ReactCountryFlag from "react-country-flag"
 
+import { TableContainer, TableRow, PlayerRow } from "@/styles";
+
 import {
   Column, 
   ColumnDef,
@@ -138,51 +140,6 @@ const columns = [
   }),
 ]
 
-
-const Table = styled('table', {
-  width: '100%',
-  thead: {
-    backgroundColor: '#1c172b',
-    height: '55px',
-    color: '#6f6e77',
-  },
-  tr: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingLeft: '40px',
-    paddingRight: '40px',
-    height: '55px',
-  },
-  th: {
-    display: 'flex',
-    alignItems: 'center'
-  },
-  
-});
-
-const Grabbable = styled('div', {
-  cursor: 'grab',
-});
-
-const PlayerRow = styled('tr', {
-  backgroundColor: '#251e40',
-  marginTop: '10px',
-  height: '50px',
-  borderRadius: '5px',
-  borderColor: 'rgb(61 45 126)',
-  borderStyle: 'solid',
-  borderWidth: '1px',  
-  cursor: 'pointer',
-
-  "&:hover": {
-    backgroundColor: 'rgb(42 31 86)',
-  },
-});
-
-const PlayerRowChild = styled('td', {
-});
-
 const HeaderData = [
   {
     id: "0",
@@ -203,13 +160,7 @@ const HeaderData = [
 ]
 
 
-const TableRow = styled('tr', {
 
-});
-
-const TableHeaderCell = styled('th', {
-
-});
 
 
 const Board: FC<{}> = ({}) => {
@@ -251,7 +202,7 @@ const Board: FC<{}> = ({}) => {
   return (
     <>
 
-<Table>
+<TableContainer>
         <thead>
           {table.getHeaderGroups().map(headerGroup => (
             <TableRow key={headerGroup.id}>
@@ -286,7 +237,11 @@ const Board: FC<{}> = ({}) => {
                     </>
 
 
-                    ) : 
+                    ) : cell.id.indexOf('money') > -1 ? (
+                      <div style={{ color: 'rgb(61, 45, 126)' }}>
+                       {cell.getValue()}
+                      </div>
+                    ) :
                     (
                       <>
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -294,19 +249,12 @@ const Board: FC<{}> = ({}) => {
                     )
                     }
 
-                    
-
-
-                  
-                  
-                  
-                  
                 </div>
               ))}
             </PlayerRow>
           ))}
         </tbody>
-      </Table>
+      </TableContainer>
 
 
     </>
