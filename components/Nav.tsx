@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Image from 'next/image'
 import { styled } from '@stitches/react';
-import Logo from "../public/Logo.png";
+import Logo from "../../Logo.png";
 
 import { useTheme } from "next-themes";
 
