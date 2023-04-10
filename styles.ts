@@ -5,7 +5,8 @@ export const SearchBar = styled('div', {
   display: 'flex',
   width: '100%',
   position: 'relative',
-  marginTop: '10px'
+  marginTop: '10px',
+  color: 'white',
 });
 
 export const Input = styled("input", {
@@ -119,6 +120,7 @@ export const PlayerRow = styled('tr', {
   borderStyle: 'solid',
   borderWidth: '1px',  
   cursor: 'pointer',
+  color: 'white',
 
   "&:hover": {
     backgroundColor: 'rgb(42 31 86)',
@@ -178,6 +180,7 @@ export const Effect = styled('div', {
 
 export const FlexItem = styled("div", {
   backgroundColor: '#251e40',
+  color: 'white',
   borderRadius: '7px',
   borderStyle: 'solid',
   borderColor: 'rgb(61 45 126)',

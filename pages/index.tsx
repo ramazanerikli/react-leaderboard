@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-
-
 const inter = Inter({ subsets: ['latin'] })
 
 import Nav from "../components/Nav";
@@ -9,88 +7,11 @@ import Board from "../components/Board";
 import { Container } from '@/components/Container';
 import Icon from "../components/Icon";
 import Search from '../components/Search';
-
-import { styled } from '@stitches/react';
+import PerspectiveGrid from '@/components/PerspectiveGrid';
 
 import players from '@/players';
 
-import { Content, Row, FlexItem, Effect, ContentOverlay, Title } from "@/styles";
-
-
-
-const GridWrapper = styled('div', {
-  position: 'absolute',
-  width: '100%',
-  height: '100%',
-  left: '0px',
-  bottom: '0px',
-  perspective: '200px',
-  zIndex: '100'
-});
-
-const Grid = styled('div', {
-  position: 'absolute',
-  top: '0px',
-  left: '0px',
-  right: '0px',
-  bottom: '0px',
-  width: '100%',
-  height: '100%',
-  marginTop: '-50px',
-  transform: 'rotateX(45deg)'
-});
-const Vertical = styled('div', {
-});
-const VerticalLine = styled('div', {
-  position: 'absolute',
-  backgroundColor: 'rgba(87, 193, 232, 0.35)',
-  backfaceVisibility: 'hidden',
-  top: '0px',
-  left: '0px',
-  bottom: '0px',
-  width: '5px',
-  backgroundImage: 'linear-gradient(top, rgba(255,255,255,0), rgba(87, 193, 232, 0.35))',
-  "&::nth-child(1)": {
-    left: '10%',
-  },
-  "&::nth-child(2)": {
-    left: '20%',
-  },
-  "&::nth-child(3)": {
-    left: '30%',
-  },
-  "&::nth-child(4)": {
-    left: '40%',
-  },
-});
-const Horizontal = styled('div', {
-});
-const HorizontalLine = styled('div', {
-  position: 'absolute',
-  backgroundColor: 'rgba(87, 193, 232, 0.35)',
-  backfaceVisibility: 'hidden',
-  top: '0px',
-  left: '0px',
-  right: '0px',
-  height: '5px',
-  "&::nth-child(1)": {
-    top: '10%',
-    opacity: '0.2'
-  },
-  "&::nth-child(2)": {
-    top: '20%',
-    opacity: '0.3'
-  },
-  "&::nth-child(3)": {
-    top: '30%',
-    opacity: '0.4'
-  },
-  "&::nth-child(4)": {
-    top: '40%',
-    opacity: '0.5'
-  },
-});
-
+import { Content, Row, FlexItem, ContentOverlay, Title } from "@/styles";
 
 export default function Home() {
   return (
@@ -101,101 +22,21 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Nav />
-
-
-      <div className="grid-wrapper">
-  <div className="grid">
-    <div className="vertical">
-      <div className="line"></div>
-      <div className="line"></div>
-      <div className="line"></div>
-      <div className="line"></div>
-      <div className="line"></div>
-      <div className="line"></div>
-      <div className="line"></div>
-      <div className="line"></div>
-      <div className="line"></div>
-      <div className="line"></div>
-      <div className="line"></div>
-    </div>
-    <div className="horizontal">
-      <div className="line"></div>
-      <div className="line"></div>
-      <div className="line"></div>
-      <div className="line"></div>
-      <div className="line"></div>
-      <div className="line"></div>
-      <div className="line"></div>
-      <div className="line"></div>
-      <div className="line"></div>
-    </div>
-  </div>
-</div>
-
-{/* 
-      <GridWrapper>
-        <Grid>
-          <Vertical>
-            <VerticalLine></VerticalLine>
-            <VerticalLine></VerticalLine>
-            <VerticalLine></VerticalLine>
-            <VerticalLine></VerticalLine>
-            <VerticalLine></VerticalLine>
-            <VerticalLine></VerticalLine>
-            <VerticalLine></VerticalLine>
-            <VerticalLine></VerticalLine>
-            <VerticalLine></VerticalLine>
-            <VerticalLine></VerticalLine>
-            <VerticalLine></VerticalLine>
-            <VerticalLine></VerticalLine>
-          </Vertical>
-          <Horizontal>
-            <HorizontalLine></HorizontalLine>
-            <HorizontalLine></HorizontalLine>
-            <HorizontalLine></HorizontalLine>
-            <HorizontalLine></HorizontalLine>
-            <HorizontalLine></HorizontalLine>
-            <HorizontalLine></HorizontalLine>
-            <HorizontalLine></HorizontalLine>
-            <HorizontalLine></HorizontalLine>
-            <HorizontalLine></HorizontalLine>
-            <HorizontalLine></HorizontalLine>
-            <HorizontalLine></HorizontalLine>
-            <HorizontalLine></HorizontalLine>
-          </Horizontal>
-        </Grid>
-      </GridWrapper>
-  */}
-      
-
-
-
-
+      <PerspectiveGrid />
        <Content>
-        <ContentOverlay>
-        </ContentOverlay>
+        <ContentOverlay></ContentOverlay>
         <Title>
             Leaderboard
           </Title>
       </Content>
-  
-
       <Container>
-
           <Row direction="row" gap="sm">
             <Search data={players} />
             <FlexItem display="flex" items="center" cursor="pointer">
               <Icon name="layers" viewBox='0 0 512 512' size={"24"}  />
             </FlexItem>
           </Row>
-
-
-
-
-
-
         <Board />
       </Container>
     </>

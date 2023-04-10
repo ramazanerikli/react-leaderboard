@@ -42,7 +42,7 @@ const players = [
   {
     playerId: 5,
     rank: 6,
-    playerName: "Merv",
+    playerName: "Lukasz",
     country: "Germany",
     money: 2000,
     iso: 'fr'
@@ -50,7 +50,7 @@ const players = [
   {
     playerId: 6,
     rank: 7,
-    playerName: "Selin",
+    playerName: "Fatih",
     country: "Mexico",
     money: 4000,
     iso: 'fr'

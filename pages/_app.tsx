@@ -1,4 +1,6 @@
 import '@/styles/globals.css'
+import '@/styles/perspective-grid.css'
+
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from "next-themes";
 import { lightTheme } from "../stitches.config";
